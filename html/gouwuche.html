@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>购物车</title>
+    <link rel="stylesheet" href="../css/base.css">
+    <link rel="stylesheet" href="../css/gouwuche.css">
+    <script src="../js/jquery-1.10.1.min.js"></script>
+    <script src="../js/common.js"></script>
+    <script src="../js/goucheye.js"></script>
+</head>
+
+<body>
+    <div class="warp">
+        <!-- 头部 -->
+        <div class="header">
+            <div class="contaient">
+                <div class="topbar fl">
+                    <ul>
+                        <li id="dlzc">
+                            <a style="color:#960c19;" href="denglu.html">登录</a>
+                            <a href="zuche.html">注册</a>
+                        </li>
+                        <li id="user" style="display:none;"><i class="uname"></i> <a id="zhuxiao" style="color:#920917;"
+                                href="javascript:;">注销,</a></li>
+                    </ul>
+                </div>
+                <div class="topmune fr">
+                    <ul>
+                        <li class="m1 fl"><a href="javascript:;">购物车<strong class="gw">0</strong>件</a></li>
+                        <li class="m2 fl"><a href="javascript:;">我的订单</a></li>
+                        <li class="m3 fl"><a href="javascript:;">用户中心</a></li>
+                        <li class="m4 fl"><a href="javascript:;">帮助</a></li>
+                        <li class="m5 fl"><a href="javascript:;" style="color:#cf0404;">提建议</a></li>
+                        <li class="m6 fl"><a href="javascript:;" style="color:#cf0404;">微博</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <!-- 主体 -->
+        <div class="main">
+            <div class="contaient">
+                <div class="cartitle">
+                    <h1 class="fl">我的购物车</h1>
+                    <b class="fl">单笔订单满100元免运费（香港、澳门、台湾、钓鱼岛地区和拆分订单除外）</b>
+                    <a class="endbtn fr" href="javascript:;"></a>
+                </div>
+                <div class="orderinfo" id="orderinfo">
+                    <dl class="goods">
+                        <div class="settle">
+                            <span>
+                                <input class="checkbox" type="checkbox" id="allcheck">
+                            </span>
+                            <dd>全选</dd>
+                            <dd>商品</dd>
+                            <dd class="s1">单价</dd>
+                            <dd class="s2">优惠</dd>
+                            <dd class="s3">数量</dd>
+                            <dd class="s4">小计</dd>
+                            <dd class="s5">操作</dd>
+                        </div>
+                        <div id="card_goods">
+                            <!-- <table class="cart_goods_area" id="tbcart">
+                                <tbody>
+                                    <tr class="go">
+                                        <td class="cb_1">
+                                            <input type="checkbox" id="che1" checked>
+                                        </td>
+                                        <td class="cb_2">
+                                            <img src="../images/gouwu.jpg" alt="">
+                                        </td>
+                                        <td class="cb_3">
+                                            <a style="color:#06c;margin-left: 4px;" href="javascript:;"> 52度 西凤 凤香经典 10年
+                                                500ml</a>
+                                        </td>
+                                        <td class="cb_4">
+                                            <span>￥178</span>
+                                        </td>
+                                        <td class="cb_5">-</td>
+                                        <td class="cb_6">
+                                            <span class="cutnum fl">-</span>
+                                            <input type="text" value="1" maxlength="4" class="nownum fl">
+                                            <span class="addnum fl">+</span>
+                                        </td>
+                                        <td class="cb_7">
+                                            <span id="sum" class="cs_sum">
+                                                <b class="pr">¥178.00</b>
+                                            </span>
+                                        </td>
+                                        <td class="cb_8">
+                                            <span class="coll_opt"><a href="javascript:;">收藏&nbsp;&nbsp;</a></span>
+                                            <span class="del_opt"><a href="javascript:;">删除</a></span>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table> -->
+                        </div>
+                    </dl>
+
+                    <dl class="send">
+                        <div class="wares">
+                            <span>电子券在“去结算”页面使用</span>
+                        </div>
+                        <div class="dele">
+                            <div class="dele_box fl">
+                                <input type="checkbox" class="checkbox2" id="che2">
+                                <span>全选</span>
+                                <a class="de_a" href="javascript:;">删除选中商品</a>
+                                <a class="de_clear" href="javascript:;">清空购物车</a>
+                            </div>
+                            <div class="dele_price fr">
+                                <span>应付商品金额：</span>
+                                <font id=playmoney>￥0.00</font>
+                            </div>
+                        </div>
+                    </dl> 
+
+
+                    <div class="jxshop">
+                        <a class="againshop fl" href="javascript:;"></a>
+                        <span class="tip fl">商品价格和库存请以订单提交是为准</span>
+                        <a class="close fr" href="javascript:;"></a>
+                    </div>
+                </div>
+                <div class="need_box">
+                    <h2>你可能还需要</h2>
+                    <dd>
+                        <ul>
+                            <li class="goods_pic">
+                                <img src="../images/goods_pri.jpg" alt="">
+                            </li>
+                            <li class="goods_name">43度 茅台飞天酒 （带杯） 500ml</li>
+                            <li class="goods_price">¥849</li>
+                            <li class="goods_btn"><a href="javascript:;"></a></li>
+                        </ul>
+                        <ul>
+                            <li class="goods_pic">
+                                <img src="../images/goods_pri.jpg" alt="">
+                            </li>
+                            <li class="goods_name">43度 茅台飞天酒 （带杯） 500ml</li>
+                            <li class="goods_price">¥849</li>
+                            <li class="goods_btn"><a href="javascript:;"></a></li>
+                        </ul>
+                        <ul>
+                            <li class="goods_pic">
+                                <img src="../images/goods_pri.jpg" alt="">
+                            </li>
+                            <li class="goods_name">43度 茅台飞天酒 （带杯） 500ml</li>
+                            <li class="goods_price">¥849</li>
+                            <li class="goods_btn"><a href="javascript:;"></a></li>
+                        </ul>
+                        <ul>
+                            <li class="goods_pic">
+                                <img src="../images/goods_pri.jpg" alt="">
+                            </li>
+                            <li class="goods_name">43度 茅台飞天酒 （带杯） 500ml</li>
+                            <li class="goods_price">¥849</li>
+                            <li class="goods_btn"><a href="javascript:;"></a></li>
+                        </ul>
+                        <ul>
+                            <li class="goods_pic">
+                                <img src="../images/goods_pri.jpg" alt="">
+                            </li>
+                            <li class="goods_name">43度 茅台飞天酒 （带杯） 500ml</li>
+                            <li class="goods_price">¥849</li>
+                            <li class="goods_btn"><a href="javascript:;"></a></li>
+                        </ul>
+                        <ul style="border-right:none;">
+                            <li class="goods_pic">
+                                <img src="../images/goods_pri.jpg" alt="">
+                            </li>
+                            <li class="goods_name">43度 茅台飞天酒 （带杯） 500ml</li>
+                            <li class="goods_price">¥849</li>
+                            <li class="goods_btn"><a href="javascript:;"></a></li>
+                        </ul>
+                        <ul>
+                            <li class="goods_pic">
+                                <img src="../images/goods_pri.jpg" alt="">
+                            </li>
+                            <li class="goods_name">43度 茅台飞天酒 （带杯） 500ml</li>
+                            <li class="goods_price">¥849</li>
+                            <li class="goods_btn"><a href="javascript:;"></a></li>
+                        </ul>
+                        <ul>
+                            <li class="goods_pic">
+                                <img src="../images/goods_pri.jpg" alt="">
+                            </li>
+                            <li class="goods_name">43度 茅台飞天酒 （带杯） 500ml</li>
+                            <li class="goods_price">¥849</li>
+                            <li class="goods_btn"><a href="javascript:;"></a></li>
+                        </ul>
+                        <ul>
+                            <li class="goods_pic">
+                                <img src="../images/goods_pri.jpg" alt="">
+                            </li>
+                            <li class="goods_name">43度 茅台飞天酒 （带杯） 500ml</li>
+                            <li class="goods_price">¥849</li>
+                            <li class="goods_btn"><a href="javascript:;"></a></li>
+                        </ul>
+                        <ul>
+                            <li class="goods_pic">
+                                <img src="../images/goods_pri.jpg" alt="">
+                            </li>
+                            <li class="goods_name">43度 茅台飞天酒 （带杯） 500ml</li>
+                            <li class="goods_price">¥849</li>
+                            <li class="goods_btn"><a href="javascript:;"></a></li>
+                        </ul>
+                        <ul>
+                            <li class="goods_pic">
+                                <img src="../images/goods_pri.jpg" alt="">
+                            </li>
+                            <li class="goods_name">43度 茅台飞天酒 （带杯） 500ml</li>
+                            <li class="goods_price">¥849</li>
+                            <li class="goods_btn"><a href="javascript:;"></a></li>
+                        </ul>
+                        <ul style="border-right:none;">
+                            <li class="goods_pic">
+                                <img src="../images/goods_pri.jpg" alt="">
+                            </li>
+                            <li class="goods_name">43度 茅台飞天酒 （带杯） 500ml</li>
+                            <li class="goods_price">¥849</li>
+                            <li class="goods_btn"><a href="javascript:;"></a></li>
+                        </ul>
+                    </dd>
+                </div>
+            </div>
+        </div>
+        <!-- 尾部 -->
+        <div class="footer">
+            <div class="contaient">
+                <img src="../images/gwcfoot.gif" alt="">
+                <div class="links">
+                    <a href="javascript:;">关于我们</a>
+                    <span>|</span>
+                    <a href="javascript:;">联系我们</a>
+                    <span>|</span>
+                    <a href="javascript:;">友情链接</a>
+                    <span>|</span>
+                    <a href="javascript:;">隐私声明</a>
+                </div>
+                <div class="copyright">Copyright® 2009-2019 gjw.com, All Rights Reserved 购酒网(上海)供应链管理有限公司 版权所有</div>
+                <div class="authentication">
+                    <a class="beian" href="javascript:;"></a>
+                    <a class="pre" href="javascript:;"></a>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
